@@ -1,0 +1,45 @@
+
+---
+name: complete-medication-prescription
+description: evaluate if the answer contains all medication prescribed in the context
+model:
+  api: chat
+  configuration:
+    type: azure_openai
+    azure_deployment: gpt-4-2024-04-09
+    azure_endpoint: ${env:AZURE_OPENAI_ENDPOINT}
+  parameters:
+    temperature: 0
+    max_tokens: 300
+    top_p: 1.0
+    response_format:
+      type: text
+inputs: 
+  context:
+    type: string
+  answer:
+    type: string
+outputs:
+  score:
+    type: string
+---
+system:
+You are an AI assistant to analyze conversation between patient and doctor. 
+You task is to verify if "answer" contains all medication prescribed in the "context". If "answer" contains all medication, return 1, otherwise return 0.
+Provide the answer as 1 or 0. Also Provide the reason.
+
+**Example**
+context: "Patient: I have a headache. Doctor: Take 2 tablets of Aspirin and 1 tablet of Ibuprofen daily for 5 days."
+answer: "Take 2 tablets of Aspirin and 1 tablet of Ibuprofen daily for 5 days."
+output:
+1
+
+context: "Patient: I have a headache. Doctor: Take 2 tablets of Aspirin and 1 tablet of Ibuprofen daily for 5 days."
+answer: "Take 2 tablets of Aspirin"
+output:
+0
+
+user: 
+context: {{context}}
+answer: {{answer}}
+output:

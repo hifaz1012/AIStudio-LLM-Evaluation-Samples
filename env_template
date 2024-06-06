@@ -1,0 +1,4 @@
+AZURE_OPENAI_ENDPOINT="[Your Azure OpenAI Endpoint] e.g. https://test-openai-swe-central1.openai.azure.com/"
+AZURE_OPENAI_API_KEY="[Your Azure OpenAI API Key]"
+AZURE_OPENAI_DEPLOYMENT="[Your Azure OpenAI Deployment Name] e.g. gpt-4-2024-04-09"
+AZURE_OPENAI_API_VERSION="2024-05-01-preview"
