@@ -40,7 +40,7 @@ Set Azure OpenAI Endpoint, API Key and Deployment Name
 ## Code Samples
 
 ### I. Question Answering Evaluation
-This is used for evaluation of completion tasks lime Summarization and NER
+This is used for evaluation of completion tasks like Summarization and NER
 
 The evaluation Data Set should be in JSONL format.
 
