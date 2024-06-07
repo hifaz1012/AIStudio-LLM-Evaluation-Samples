@@ -17,9 +17,9 @@ model_config = AzureOpenAIModelConfiguration(
 
 # Optionally provide your Azure AI studio project information to track your evaluation results in your Azure AI studio project
 # azure_ai_project = {
-#     "subscription_id": "9ee205fa-95e9-475e-b899-44dcd10875eb",
-#     "resource_group_name": "fabric-singhealth1",
-#     "project_name": "project1",
+#     "subscription_id": "[subscription id]",
+#     "resource_group_name": "[resource group name]",
+#     "project_name": "[AI Hub Project Name]"
 # }
 
 # Initialzing Relevance Evaluator
@@ -56,7 +56,7 @@ result = evaluate(
         }
     },
     # # Optionally provide your AI Studio project information to track your evaluation results in your Azure AI studio project
-    #azure_ai_project = azure_ai_project,
+    azure_ai_project = azure_ai_project,
     # Optionally provide an output path to dump a json of metric summary, row level data and metric and studio URL
     output_path=output_path
 )
