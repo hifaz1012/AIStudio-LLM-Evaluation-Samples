@@ -56,7 +56,7 @@ result = evaluate(
         }
     },
     # # Optionally provide your AI Studio project information to track your evaluation results in your Azure AI studio project
-    azure_ai_project = azure_ai_project,
+    #azure_ai_project = azure_ai_project,
     # Optionally provide an output path to dump a json of metric summary, row level data and metric and studio URL
     output_path=output_path
 )
