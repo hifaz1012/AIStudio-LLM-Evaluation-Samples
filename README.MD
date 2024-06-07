@@ -77,7 +77,7 @@ Run `az login` before executing the python code. After successful run, the AI St
 
 ### II. Chat Conversation Evaluation
 
-Chat Evaluator: Execute `python sample_code_oob\evaluator_rag_chat.py`
+**Chat Evaluator**: Execute `python sample_code_oob\evaluator_rag_chat.py`
 
 Eval Data Set Input format for chat conversation
 ```
@@ -95,7 +95,7 @@ The conversation can contain series of messages between user and AI assistant. T
 The results will produce various metrics like groundedness, relevance and retrieval scores.
 
 ### III. Content Safety Evaluation
-Content Safety Evaluator: `python sample_code_oob\content_safety_eval.py`
+**Content Safety Evaluator**: `python sample_code_oob\content_safety_eval.py`
 Content Safety needs connection to AI Studio, provide it in the format
 ```
 azure_ai_project = {
