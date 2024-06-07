@@ -5,10 +5,9 @@ Azure AI Studio offers 3 types of Large Language Model (LLM) Evaluations.
 
 2. **AI Assisted Evaluation**: Large language models (LLM) such as GPT-4 can be used to evaluate the output of generative AI language systems. Please refer to https://learn.microsoft.com/en-us/azure/ai-studio/how-to/evaluate-generative-ai-app for detailed steps.
 
-    AI Assisted Evaluation Metrics supports Generation Quality Metrics like Groundedness, Relevance and Risk and Safety Metrics https://learn.microsoft.com/en-us/azure/ai-studio/how-to/evaluate-generative-ai-app 
-    Defintion of Generation Quality Metrics and Score (1 -5) is described here https://learn.microsoft.com/en-us/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=warning#generation-quality-metrics
+    AI Assisted Evaluation Metrics supports Generation Quality Metrics like Groundedness, Relevance and Risk and Safety Metrics. Defintion of Generation Quality Metrics and Score (1 -5) is described here https://learn.microsoft.com/en-us/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=warning#generation-quality-metrics
 
-3. **Prompt Flow SDK**: Use the Prompt Flow SDK to generate AI Assisted Metrics in in python code and also build your own custom metrics. For more info refer https://learn.microsoft.com/en-us/azure/ai-studio/how-to/develop/flow-evaluate-sdk 
+3. **Prompt Flow SDK**: Use the Prompt Flow SDK to generate AI Assisted Metrics using python code and also build your own custom metrics. For more info refer https://learn.microsoft.com/en-us/azure/ai-studio/how-to/develop/flow-evaluate-sdk 
 
 | Metric    | Description |
 |----------|----------|
@@ -17,7 +16,7 @@ Azure AI Studio offers 3 types of Large Language Model (LLM) Evaluations.
 
 **Code Samples and Description are provided below.** 
 
-*Please note that AI Assisted Evaluation and Prompt Flow SDK Evualator Library is in Public Preview
+*Please note that AI Assisted Evaluation and Prompt Flow SDK Evaluator Library is in Public Preview
 
 ## Setup
 1. Git clone the project : `https://github.com/hifaz1012/AIStudio-Evaluation-Samples`
@@ -52,13 +51,13 @@ The evaluation Data Set should be in JSONL format.
 `context` and `ground_truth` are optional.
 Please refer to `sample_data/sample_qa.jsonl` and `sample_data/sample_transcript.jsonl` for examples
 
-1. Groundedness Evaluator : Execute `python sample_code_oob\groundedness_test.py`
+1. **Groundedness Evaluator** : Execute `python sample_code_oob\groundedness_test.py`
 
-2. Relevance Evaluator: Execute `python sample_code_oob\relevance_test.py`
+2. **Relevance Evaluator**: Execute `python sample_code_oob\relevance_test.py`
 
-3. Composite Evaluator (Multiple Evaluations) using `evaluate` function to generate Groundedness and Relevance metrics on sample JSONL dataset : Execute `python sample_code_oob\evaluator_qa_singleturn.py`
+3. **Composite Evaluator** (Multiple Metrics Evaluations) using `evaluate` function to generate Groundedness and Relevance metrics on sample JSONL dataset : Execute `python sample_code_oob\evaluator_qa_singleturn.py`
 
-The results will stored as JSON under results folder with unique run id. "rows" will contain the metrics such as groundedness for each question and answer pair and "metrics" will contain the mean results of the run.
+The results will stored as JSON under local `results` folder with unique run id. "rows" will contain the metrics such as groundedness for each question and answer pair and "metrics" will contain the mean results of the run.
 
 If you want to log the results into AI Studio, comment out the following lines in code
 ```
@@ -110,13 +109,13 @@ The results will contain content saftey metrics like violence, hate and self har
 ### IV. Custom Evaluator
 To build your own custom evaluator, prepare `prompty` file similar to `sample_code_custom\completeness_evaluator.prompty`. Learn more about prompty https://microsoft.github.io/promptflow/how-to-guides/develop-a-prompty/use-prompty-in-flow.html
 
-The prompty file contains model parameters, inputs, outputs, system message and few shot examples. Prepare similar prompty file and change configuration as per your use.
+The prompty file contains model parameters, inputs, outputs, system message and few shot examples.
 
 Ensure the Eval data set columns matches the inputs variables
 
 Then execute `python sample_code_custom\evaluator_custom_completeness.py`. 
 
-The evaluation score and reason will be output.
+The output is evaluation score and reason for score.
 
 The results are amazing : )
 
