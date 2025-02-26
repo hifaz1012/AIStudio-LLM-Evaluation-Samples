@@ -1,1 +1,6 @@
 promptflow-evals
+openai 
+langchain-core 
+langchain-prompty 
+langchain-azure-openai 
+azure-identity
